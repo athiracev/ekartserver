@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
     try {
         const token = req.headers['authorization'].split(" ")[1]
         if(token){
-            const result = jst.verify(token,process.env.SECRET_KEY)
+            const result = jwt.verify(token,process.env.SECRET_KEY)
             const {userId}=result
             req.payload= userId
             next()

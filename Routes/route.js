@@ -17,5 +17,7 @@ router.post('/login',userController.userLogin)
 // add wishlist 
 
 router.post('/addwishlist',jwtMiddle,wishlistController.addWishList)
+router.get('/getwishlist',jwtMiddle,wishlistController.getWishlist)
+router.delete('/deletewishlist/:id',jwtMiddle,wishlistController.removeWishlist)
 
 module.exports=router
